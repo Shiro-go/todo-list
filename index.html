@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ToDo List</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <section class="panel">
+      <div class="content">
+        <div class="topbar">
+          <div class="title-wrap">
+            <h1>ToDo List</h1>
+            <p>Your tasks stay saved locally in your browser with <strong>localStorage</strong>.</p>
+          </div>
+
+          <div class="stats">
+            <div class="stat-card">
+              <span class="label">Total</span>
+              <span class="value" id="totalCount">0</span>
+            </div>
+            <div class="stat-card">
+              <span class="label">Visible</span>
+              <span class="value" id="visibleCount">0</span>
+            </div>
+            <div class="stat-card">
+              <span class="label">Done</span>
+              <span class="value" id="doneCount">0</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="filters">
+          <div class="filter-chip filter-grey">
+            <input type="checkbox" id="filterNotDone" checked />
+            <label for="filterNotDone">Not done</label>
+          </div>
+
+          <div class="filter-chip filter-orange">
+            <input type="checkbox" id="filterInProgress" checked />
+            <label for="filterInProgress">Currently doing</label>
+          </div>
+
+          <div class="filter-chip filter-green">
+            <input type="checkbox" id="filterFinished" checked />
+            <label for="filterFinished">Finished</label>
+          </div>
+        </div>
+
+        <form class="composer" id="taskForm">
+          <input class="input" id="taskTitle" type="text" maxlength="80" placeholder="Task title" required />
+          <input class="input" id="taskDescription" type="text" maxlength="180" placeholder="Task description" />
+          <select class="select" id="taskState">
+            <option value="not_done">Not done</option>
+            <option value="in_progress">Currently doing</option>
+            <option value="finished">Finished</option>
+          </select>
+          <button class="button" type="submit">Add task</button>
+        </form>
+
+        <div class="toolbar">
+          <div class="toolbar-left">
+            <button class="ghost-btn active" type="button" data-sort="created">Sort: added order</button>
+            <button class="ghost-btn" type="button" data-sort="state">Sort: state</button>
+            <button class="ghost-btn" type="button" data-sort="title">Sort: title</button>
+          </div>
+
+          <div class="toolbar-right">
+            <button class="ghost-btn" id="clearFinishedBtn" type="button">Clear finished</button>
+            <button class="ghost-btn" id="clearAllBtn" type="button">Clear all</button>
+          </div>
+        </div>
+
+        <section class="tasks" id="taskList"></section>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
