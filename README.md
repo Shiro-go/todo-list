@@ -63,7 +63,7 @@ No frameworks. No backend. Just clean frontend logic and local persistence.
 ## 🌐 Live
 
 Hosted with GitHub Pages:
-👉 [https://shiro-go.github.io/todo-list/](link)
+👉 [link](https://shiro-go.github.io/todo-list/)
 
 ---
 
